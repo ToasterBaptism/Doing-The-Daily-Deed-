@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CardViewStyle">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/card_padding"
+        android:gravity="center_vertical">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvProfileName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Profile Name"
+                style="@style/SubHeaderText" />
+
+            <TextView
+                android:id="@+id/tvProfileInfo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Created: 2024-01-01 | Entries: 25"
+                style="@style/CaptionText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnLoadProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/load_profile"
+                style="@style/SecondaryButton"
+                android:layout_marginEnd="@dimen/spacing_small"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/spacing_medium" />
+
+            <Button
+                android:id="@+id/btnDeleteProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_profile"
+                style="@style/SecondaryButton"
+                android:textColor="@color/error_red"
+                android:minWidth="0dp"
+                android:paddingHorizontal="@dimen/spacing_medium" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

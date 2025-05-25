@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_light"
+    tools:context=".ViewEntriesActivity">
+
+    <!-- Header with Search -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/activity_horizontal_margin"
+        android:background="@color/white"
+        android:elevation="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/view_entries_title"
+            style="@style/HeaderText"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/spacing_medium" />
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/search_entries"
+            android:inputType="text"
+            android:padding="@dimen/text_field_padding"
+            android:background="@drawable/edit_text_background"
+            android:drawableStart="@android:drawable/ic_menu_search"
+            android:drawablePadding="@dimen/spacing_small" />
+
+    </LinearLayout>
+
+    <!-- Filter Options -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/spacing_small"
+        android:background="@color/white">
+
+        <Button
+            android:id="@+id/btnFilterToday"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Today"
+            style="@style/SecondaryButton"
+            android:layout_margin="@dimen/spacing_tiny" />
+
+        <Button
+            android:id="@+id/btnFilterWeek"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="This Week"
+            style="@style/SecondaryButton"
+            android:layout_margin="@dimen/spacing_tiny" />
+
+        <Button
+            android:id="@+id/btnFilterAll"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="All"
+            style="@style/SecondaryButton"
+            android:layout_margin="@dimen/spacing_tiny" />
+
+    </LinearLayout>
+
+    <!-- Entries List -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvEntries"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="@dimen/spacing_small"
+        tools:listitem="@layout/item_work_entry" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/layoutEmptyState"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_entries"
+            style="@style/BodyText"
+            android:textColor="@color/text_secondary" />
+
+    </LinearLayout>
+
+    <!-- Action Button -->
+    <Button
+        android:id="@+id/btnExport"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/button_height"
+        android:text="@string/export_entries"
+        style="@style/PrimaryButton"
+        android:layout_margin="@dimen/activity_horizontal_margin" />
+
+</LinearLayout>
